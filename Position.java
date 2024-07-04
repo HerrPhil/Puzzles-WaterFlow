@@ -20,4 +20,13 @@ public final class Position {
     public String toString() {
         return "Position (" + String.valueOf(i) + ", " + String.valueOf(j) + ")";
     }
+
+    public int rowCoordinate() {
+        return i;
+    }
+
+    public int columnCoordinate() {
+        return j;
+    }
+
 }
