@@ -65,10 +65,12 @@ public class WaterFlow {
 
         // Add all the pacific shoreline positions that flow to the pacific
         // to the the pacific queue and pacific seen set.
+        // Sea level elevation is 0, less than all elevations in elevations list.
         for (int j = 0; j < n; j++) {
             Position position = new Position(0, j);
             pacificQueue.addLast(position);
             pacificSeen.add(position);
+            System.out.printf("%s added to pacific set%n", position.toString());
         }
 
         // Start at 1 to avoid duplicating the position at 0 added above.
@@ -80,6 +82,7 @@ public class WaterFlow {
 
         // Add all the atlantic shorelinee positions that flow to the atlantic
         // to the atlantic queue and atlantic set.
+        // Sea level elevation is 0, less than all elevations in elevations list.
         for (int i = 0; i < m; i++) {
             Position position = new Position(i, n - 1);
             atlanticQueue.addLast(position);
@@ -99,10 +102,83 @@ public class WaterFlow {
         System.out.printf("Expect 9 queue atlantic shoreline positions, actual queue = %d%n", atlanticQueue.size());
         System.out.printf("Expect 9 seen atlantic shoreline positions, actual seen = %d%n", atlanticSeen.size());
 
+        System.out.printf("Get Pacific positions%n");
+        getPositions(elevations, m, n, pacificQueue, pacificSeen);
+
+        System.out.printf("Get Atlantic positions%n");
+        getPositions(elevations, m, n, atlanticQueue, atlanticSeen);
+
         // This will be the intersection of pacific and atlantic positions.
         Set<Position> result = new HashSet<>();
 
         return result;
+    }
+
+    private void getPositions(List<List<Integer>> elevations, int m, int n, Deque<Position> queue, Set<Position> seen) {
+
+        System.out.printf("Apply the get positions domain logic to these elevations%n");
+        System.out.printf("Use this queue for looping%n");
+        System.out.printf("Store upstream positions in this set of seen positions%n");
+
+        while (queue.peekFirst() != null) {
+
+            Position position = queue.removeFirst();
+            int i = position.rowCoordinate();
+            int j = position.columnCoordinate();
+
+            System.out.printf("Popped %s%n", position.toString());
+
+            // Breadth-first search (BFS) for elevation.
+            // For every position that is x + 1, x - 1, y + 1 and y - 1,
+            // Do the following, ...
+
+            int[][] offsets = new int[][] {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
+            for (int index = 0; index < offsets.length; index++) {
+                int[] offset = offsets[index];
+                int rowOffset = offset[0];
+                int columnOffset = offset[1];
+                System.out.printf("Analyze with position offset (%d, %d)%n", rowOffset, columnOffset);
+
+                // Ensure the i + row offset is in bounds
+                int row = i + rowOffset;
+                if (!(0 <= row && row < m)) continue;
+                System.out.printf("The upstream row coordinate %d is valid%n", row);
+
+                // Ensure the j + column offset is in bounds
+                int column = j + columnOffset;
+                if (!(0 <= column && column < n)) continue;
+                System.out.printf("The upstream column coordinate %d is valid%n", column);
+
+                // Business rule: height at offset position is
+                // greater than or equal to this position.
+                // When this is the case, then water flows downstream to the current position
+                int upstreamElevation = elevations.get(row).get(column);
+                int currentElevation = elevations.get(i).get(j);
+                if (!(upstreamElevation >= currentElevation)) continue;
+                System.out.printf("The upstream elevation %d >= current elevation %d%n", upstreamElevation, currentElevation);
+
+                // Verified the upstream position is valid and upstream
+                final Position upstreamPosition = new Position(row, column);
+
+                // Business rule: the offset position has not been seen
+                Optional<Position> optionalPosition = seen.stream().filter(check -> check.equals(upstreamPosition)).findAny();
+                boolean foundUpstreamPosition = optionalPosition.isPresent();
+                if (foundUpstreamPosition) continue;
+                System.out.printf("The upstream %s has not been seen%n", upstreamPosition.toString());
+
+                // Therefore, the upstream position should be
+                // added to the set of seen positions
+                // and the queue for more BFS analysis.
+                seen.add(upstreamPosition);
+                queue.addLast(upstreamPosition);
+                
+            }
+
+        }
+
+        System.out.printf("The queue is empty%n");
+        System.out.printf("There are %d upstream positions%n", seen.size());
     }
 
 }
