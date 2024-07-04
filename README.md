@@ -38,9 +38,9 @@ We take the intersection of those two sets to find the positions that flow to bo
 
 The breadh-first search is accomplished by using two data structures.
 
-The queue are the positions to analyze whether neighbouring positions match the business rule.
+The queue is the positions to analyze whether neighbouring positions match the business rule.
 
-The set are the positions that have been "seen", or analyzed.
+The set is the positions that have been "seen", or analyzed.
 
 When next positions match the business rule, then they are added to the back of the queue.
 
