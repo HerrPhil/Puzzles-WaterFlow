@@ -1,0 +1,502 @@
+Hello Water Flow Solution #1
+Position (0, 0) added to pacific set
+Position (0, 1) added to pacific set
+Position (0, 2) added to pacific set
+Position (0, 3) added to pacific set
+Position (0, 4) added to pacific set
+Position (1, 0) added to pacific set
+Position (2, 0) added to pacific set
+Position (3, 0) added to pacific set
+Position (4, 0) added to pacific set
+Position (0, 4) added to atlantic set
+Position (1, 4) added to atlantic set
+Position (2, 4) added to atlantic set
+Position (3, 4) added to atlantic set
+Position (4, 4) added to atlantic set
+Position (4, 0) added to atlantic set
+Position (4, 1) added to atlantic set
+Position (4, 2) added to atlantic set
+Position (4, 3) added to atlantic set
+Expect 9 queue pacific shoreline positions, actual queue = 9
+Expect 9 seen pacific shoreline positions, actual seen = 9
+Expect 9 queue atlantic shoreline positions, actual queue = 9
+Expect 9 seen atlantic shoreline positions, actual seen = 9
+
+Get Pacific positions
+
+Apply the get positions domain logic to these elevations
+Use this queue for looping
+Store upstream positions in this set of seen positions
+Popped Position (0, 0)
+Analyze with position offset (1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 0 is valid
+The upstream elevation 2 >= current elevation 1
+Analyze with position offset (-1, 0)
+Analyze with position offset (0, 1)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 3 >= current elevation 1
+Analyze with position offset (0, -1)
+The upstream row coordinate 0 is valid
+Popped Position (0, 1)
+Analyze with position offset (1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 1 is valid
+Analyze with position offset (-1, 0)
+Analyze with position offset (0, 1)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 2 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 0 is valid
+Popped Position (0, 2)
+Analyze with position offset (1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 2 is valid
+The upstream elevation 4 >= current elevation 2
+The upstream Position (1, 2) has not been seen
+Position (1, 2) added to BFS queue and set
+Analyze with position offset (-1, 0)
+Analyze with position offset (0, 1)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 6 >= current elevation 2
+Analyze with position offset (0, -1)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 3 >= current elevation 2
+Popped Position (0, 3)
+Analyze with position offset (1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 7 >= current elevation 6
+The upstream Position (1, 3) has not been seen
+Position (1, 3) added to BFS queue and set
+Analyze with position offset (-1, 0)
+Analyze with position offset (0, 1)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 4 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 2 is valid
+Popped Position (0, 4)
+Analyze with position offset (1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 4 is valid
+Analyze with position offset (-1, 0)
+Analyze with position offset (0, 1)
+The upstream row coordinate 0 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 6 >= current elevation 5
+Popped Position (1, 0)
+Analyze with position offset (1, 0)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 0 is valid
+The upstream elevation 2 >= current elevation 2
+Analyze with position offset (-1, 0)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 0 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 2 >= current elevation 2
+The upstream Position (1, 1) has not been seen
+Position (1, 1) added to BFS queue and set
+Analyze with position offset (0, -1)
+The upstream row coordinate 1 is valid
+Popped Position (2, 0)
+Analyze with position offset (1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 0 is valid
+The upstream elevation 3 >= current elevation 2
+Analyze with position offset (-1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 0 is valid
+The upstream elevation 2 >= current elevation 2
+Analyze with position offset (0, 1)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 3 >= current elevation 2
+The upstream Position (2, 1) has not been seen
+Position (2, 1) added to BFS queue and set
+Analyze with position offset (0, -1)
+The upstream row coordinate 2 is valid
+Popped Position (3, 0)
+Analyze with position offset (1, 0)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 0 is valid
+The upstream elevation 5 >= current elevation 3
+Analyze with position offset (-1, 0)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 0 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 4 >= current elevation 3
+The upstream Position (3, 1) has not been seen
+Position (3, 1) added to BFS queue and set
+Analyze with position offset (0, -1)
+The upstream row coordinate 3 is valid
+Popped Position (4, 0)
+Analyze with position offset (1, 0)
+Analyze with position offset (-1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 0 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 1 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 4 is valid
+Popped Position (1, 2)
+Analyze with position offset (1, 0)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 2 is valid
+The upstream elevation 5 >= current elevation 4
+The upstream Position (2, 2) has not been seen
+Position (2, 2) added to BFS queue and set
+Analyze with position offset (-1, 0)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 2 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 7 >= current elevation 4
+Analyze with position offset (0, -1)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 1 is valid
+Popped Position (1, 3)
+Analyze with position offset (1, 0)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 3 is valid
+Analyze with position offset (-1, 0)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 3 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 4 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 2 is valid
+Popped Position (1, 1)
+Analyze with position offset (1, 0)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 3 >= current elevation 2
+Analyze with position offset (-1, 0)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 3 >= current elevation 2
+Analyze with position offset (0, 1)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 2 is valid
+The upstream elevation 4 >= current elevation 2
+Analyze with position offset (0, -1)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 0 is valid
+The upstream elevation 2 >= current elevation 2
+Popped Position (2, 1)
+Analyze with position offset (1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 4 >= current elevation 3
+Analyze with position offset (-1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 1 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 2 is valid
+The upstream elevation 5 >= current elevation 3
+Analyze with position offset (0, -1)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 0 is valid
+Popped Position (3, 1)
+Analyze with position offset (1, 0)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 4 >= current elevation 4
+The upstream Position (4, 1) has not been seen
+Position (4, 1) added to BFS queue and set
+Analyze with position offset (-1, 0)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 1 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 2 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 0 is valid
+Popped Position (2, 2)
+Analyze with position offset (1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 2 is valid
+Analyze with position offset (-1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 2 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 3 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 1 is valid
+Popped Position (4, 1)
+Analyze with position offset (1, 0)
+Analyze with position offset (-1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 4 >= current elevation 4
+Analyze with position offset (0, 1)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 2 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 0 is valid
+The upstream elevation 5 >= current elevation 4
+The queue is empty
+There are 16 upstream positions
+
+Get Atlantic positions
+
+Apply the get positions domain logic to these elevations
+Use this queue for looping
+Store upstream positions in this set of seen positions
+Popped Position (0, 4)
+Analyze with position offset (1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 4 is valid
+Analyze with position offset (-1, 0)
+Analyze with position offset (0, 1)
+The upstream row coordinate 0 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 6 >= current elevation 5
+The upstream Position (0, 3) has not been seen
+Position (0, 3) added to BFS queue and set
+Popped Position (1, 4)
+Analyze with position offset (1, 0)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 4 is valid
+The upstream elevation 1 >= current elevation 1
+Analyze with position offset (-1, 0)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 4 is valid
+The upstream elevation 5 >= current elevation 1
+Analyze with position offset (0, 1)
+The upstream row coordinate 1 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 7 >= current elevation 1
+The upstream Position (1, 3) has not been seen
+Position (1, 3) added to BFS queue and set
+Popped Position (2, 4)
+Analyze with position offset (1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 4 is valid
+The upstream elevation 2 >= current elevation 1
+Analyze with position offset (-1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 4 is valid
+The upstream elevation 1 >= current elevation 1
+Analyze with position offset (0, 1)
+The upstream row coordinate 2 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 1 >= current elevation 1
+The upstream Position (2, 3) has not been seen
+Position (2, 3) added to BFS queue and set
+Popped Position (3, 4)
+Analyze with position offset (1, 0)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 4 is valid
+The upstream elevation 4 >= current elevation 2
+Analyze with position offset (-1, 0)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 4 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 3 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 4 >= current elevation 2
+The upstream Position (3, 3) has not been seen
+Position (3, 3) added to BFS queue and set
+Popped Position (4, 4)
+Analyze with position offset (1, 0)
+Analyze with position offset (-1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 4 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 4 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 5 >= current elevation 4
+Popped Position (4, 0)
+Analyze with position offset (1, 0)
+Analyze with position offset (-1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 0 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 1 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 4 is valid
+Popped Position (4, 1)
+Analyze with position offset (1, 0)
+Analyze with position offset (-1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 4 >= current elevation 4
+The upstream Position (3, 1) has not been seen
+Position (3, 1) added to BFS queue and set
+Analyze with position offset (0, 1)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 2 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 0 is valid
+The upstream elevation 5 >= current elevation 4
+Popped Position (4, 2)
+Analyze with position offset (1, 0)
+Analyze with position offset (-1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 2 is valid
+The upstream elevation 3 >= current elevation 1
+The upstream Position (3, 2) has not been seen
+Position (3, 2) added to BFS queue and set
+Analyze with position offset (0, 1)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 5 >= current elevation 1
+Analyze with position offset (0, -1)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 4 >= current elevation 1
+Popped Position (4, 3)
+Analyze with position offset (1, 0)
+Analyze with position offset (-1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 3 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 4 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 2 is valid
+Popped Position (0, 3)
+Analyze with position offset (1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 7 >= current elevation 6
+Analyze with position offset (-1, 0)
+Analyze with position offset (0, 1)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 4 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 2 is valid
+Popped Position (1, 3)
+Analyze with position offset (1, 0)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 3 is valid
+Analyze with position offset (-1, 0)
+The upstream row coordinate 0 is valid
+The upstream column coordinate 3 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 4 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 2 is valid
+Popped Position (2, 3)
+Analyze with position offset (1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 4 >= current elevation 1
+Analyze with position offset (-1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 7 >= current elevation 1
+Analyze with position offset (0, 1)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 4 is valid
+The upstream elevation 1 >= current elevation 1
+Analyze with position offset (0, -1)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 2 is valid
+The upstream elevation 5 >= current elevation 1
+The upstream Position (2, 2) has not been seen
+Position (2, 2) added to BFS queue and set
+Popped Position (3, 3)
+Analyze with position offset (1, 0)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 5 >= current elevation 4
+Analyze with position offset (-1, 0)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 3 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 4 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 2 is valid
+Popped Position (3, 1)
+Analyze with position offset (1, 0)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 4 >= current elevation 4
+Analyze with position offset (-1, 0)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 1 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 2 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 0 is valid
+Popped Position (3, 2)
+Analyze with position offset (1, 0)
+The upstream row coordinate 4 is valid
+The upstream column coordinate 2 is valid
+Analyze with position offset (-1, 0)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 2 is valid
+The upstream elevation 5 >= current elevation 3
+Analyze with position offset (0, 1)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 3 is valid
+The upstream elevation 4 >= current elevation 3
+Analyze with position offset (0, -1)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 1 is valid
+The upstream elevation 4 >= current elevation 3
+Popped Position (2, 2)
+Analyze with position offset (1, 0)
+The upstream row coordinate 3 is valid
+The upstream column coordinate 2 is valid
+Analyze with position offset (-1, 0)
+The upstream row coordinate 1 is valid
+The upstream column coordinate 2 is valid
+Analyze with position offset (0, 1)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 3 is valid
+Analyze with position offset (0, -1)
+The upstream row coordinate 2 is valid
+The upstream column coordinate 1 is valid
+The queue is empty
+There are 16 upstream positions
+
+number of intersected positions = 7
+Position (0, 3)
+Position (1, 3)
+Position (2, 2)
+Position (0, 4)
+Position (4, 1)
+Position (3, 1)
+Position (4, 0)
