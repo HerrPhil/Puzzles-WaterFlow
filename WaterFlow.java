@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.*;
 
 public class WaterFlow {
@@ -41,7 +42,10 @@ public class WaterFlow {
         
         Set<Position> result = waterFlow.findPositionsToFlowIntoBothOceans(elevations);
 
-        System.out.printf("number of positions = %d%n", result.size());
+        System.out.printf("%nnumber of intersected positions = %d%n", result.size());
+        result.stream().forEach((position) -> {
+            System.out.printf("%s%n", position.toString());
+        });
     }
 
     public Set<Position> findPositionsToFlowIntoBothOceans(List<List<Integer>> elevations) {
@@ -78,6 +82,7 @@ public class WaterFlow {
             Position position = new Position(i, 0);
             pacificQueue.addLast(position);
             pacificSeen.add(position);
+            System.out.printf("%s added to pacific set%n", position.toString());
         }
 
         // Add all the atlantic shorelinee positions that flow to the atlantic
@@ -87,6 +92,7 @@ public class WaterFlow {
             Position position = new Position(i, n - 1);
             atlanticQueue.addLast(position);
             atlanticSeen.add(position);
+            System.out.printf("%s added to atlantic set%n", position.toString());
         }
 
         // Stop before n - 1 to avoid duplicating the position at n - 1 added above.
@@ -94,6 +100,7 @@ public class WaterFlow {
             Position position = new Position(m - 1, j);
             atlanticQueue.addLast(position);
             atlanticSeen.add(position);
+            System.out.printf("%s added to atlantic set%n", position.toString());
         }
 
         System.out.printf("Expect 9 queue pacific shoreline positions, actual queue = %d%n", pacificQueue.size());
@@ -102,14 +109,15 @@ public class WaterFlow {
         System.out.printf("Expect 9 queue atlantic shoreline positions, actual queue = %d%n", atlanticQueue.size());
         System.out.printf("Expect 9 seen atlantic shoreline positions, actual seen = %d%n", atlanticSeen.size());
 
-        System.out.printf("Get Pacific positions%n");
+        System.out.printf("%nGet Pacific positions%n%n");
         getPositions(elevations, m, n, pacificQueue, pacificSeen);
 
-        System.out.printf("Get Atlantic positions%n");
+        System.out.printf("%nGet Atlantic positions%n%n");
         getPositions(elevations, m, n, atlanticQueue, atlanticSeen);
 
         // This will be the intersection of pacific and atlantic positions.
-        Set<Position> result = new HashSet<>();
+        Predicate<Position> pacificCheck = pacificPosition -> atlanticSeen.stream().anyMatch(atlanticPosition -> pacificPosition.equals(atlanticPosition));
+        Set<Position> result = pacificSeen.stream().filter(pacificCheck).collect(Collectors.toSet());
 
         return result;
     }
@@ -172,6 +180,7 @@ public class WaterFlow {
                 // and the queue for more BFS analysis.
                 seen.add(upstreamPosition);
                 queue.addLast(upstreamPosition);
+                System.out.printf("%s added to BFS queue and set%n", upstreamPosition.toString());
                 
             }
 
