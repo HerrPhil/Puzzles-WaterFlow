@@ -56,3 +56,14 @@ See
 and
 [this article](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
 for more explanations and examples of BFS.
+
+## Java 8 Learning
+
+This solution requires comparison of positions as part of the BFS logic,
+and the intersection of sets of positions where water flows to both oceans.
+I discovered that the `contains(Object o)` method does not use the
+overridden `equals(Object o)` method of the `Position` class.
+The Set class only compares the instance of the Position class for equality.
+This required a different solution. Streams in Java 8 are a good alternative
+for this. They afford filtering of values on predicate tests and collecting
+of matched value in result collections.
